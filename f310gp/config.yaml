@@ -1,29 +1,11 @@
-name: "Festa F310GP Monitor"
+name: "Festa Monitor"
 version: "1.0.0"
 slug: "f310gp"
-description: "Festa F310GP MQTT Auto-Discovery via SSH"
+description: "Festa F310GP MQTT"
+init: false
 arch:
   - aarch64
   - amd64
-init: false
 host_network: true
-options:
-  mqtt_host: ""
-  mqtt_port: 1883
-  mqtt_user: ""
-  mqtt_password: ""
-  mqtt_prefix: "homeassistant"
-  switch_hosts: ""
-  switch_users: ""
-  switch_passwords: ""
-  poll_interval: 60
-schema:
-  mqtt_host: "str"
-  mqtt_port: "int(1883)"
-  mqtt_user: "str"
-  mqtt_password: "password"
-  mqtt_prefix: "str(homeassistant)"
-  switch_hosts: "str"
-  switch_users: "str"
-  switch_passwords: "password"
-  poll_interval: "int(60)"
+options: {}
+schema: {}
