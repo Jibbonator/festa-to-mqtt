@@ -1,0 +1,443 @@
+square: false
+type: grid
+title: Festa F310GP Switch
+columns: 1
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        name: Link Down
+        show_state: false
+        show_icon: false
+        color_type: card
+        styles:
+          card:
+            - background: grey
+            - width: 60px
+            - height: 30px
+          name:
+            - font-size: 10px
+            - color: black
+      - type: custom:button-card
+        name: 10Full
+        show_state: false
+        show_icon: false
+        color_type: card
+        styles:
+          card:
+            - background: orange
+            - width: 40px
+            - height: 30px
+          name:
+            - font-size: 10px
+            - color: white
+      - type: custom:button-card
+        name: 100Full
+        show_state: false
+        show_icon: false
+        color_type: card
+        styles:
+          card:
+            - background: green
+            - width: 40px
+            - height: 30px
+          name:
+            - font-size: 10px
+            - color: white
+      - type: custom:button-card
+        name: 1G Full
+        show_state: false
+        show_icon: false
+        color_type: card
+        styles:
+          card:
+            - background: blue
+            - width: 50px
+            - height: 30px
+          name:
+            - font-size: 10px
+            - color: white
+      - type: custom:button-card
+        name: 2.5G Full
+        show_state: false
+        show_icon: false
+        color_type: card
+        styles:
+          card:
+            - background: purple
+            - width: 50px
+            - height: 30px
+          name:
+            - font-size: 10px
+            - color: white
+      - type: custom:button-card
+        name: 10G Full
+        show_state: false
+        show_icon: false
+        color_type: card
+        styles:
+          card:
+            - background: pink
+            - width: 50px
+            - height: 30px
+          name:
+            - font-size: 10px
+            - color: white
+  - type: grid
+    columns: 10
+    square: false
+    cards:
+      - type: custom:button-card
+        entity: sensor.f310gp_192_168_1_84_port_Gi1_0_1
+        name: |
+          [[[
+            const portNum = 1;
+            const power = parseFloat(entity.attributes.poe_power_w) || 0;
+            if (power > 0) {
+              return `<b>P${portNum}</b><br><span style="font-size:10px">${power.toFixed(1)}W</span>`;
+            }
+            return `<b>P${portNum}</b>`;
+          ]]]
+        aspect_ratio: 1
+        color_type: card
+        show_icon: false
+        show_state: false
+        show_label: true
+        styles:
+          card:
+            - padding: 4px
+            - background: |
+                [[[
+                  const speed = entity.attributes.speed || 'Down';
+                  if (speed === 'Link Down') return 'grey';
+                  if (speed.includes('10Full')) return 'orange';
+                  if (speed.includes('100Full')) return 'green';
+                  if (speed.includes('1000Full') || speed.includes('1GFull')) return 'blue';
+                  if (speed.includes('2500Full')) return 'purple';
+                  if (speed.includes('10GFull')) return 'pink';
+                  return 'gray';
+                ]]]
+          name:
+            - justify-self: center
+            - align-self: center
+            - margin: 0px
+            - padding: 0px
+            - font-size: 12px
+            - font-weight: bold
+      - type: custom:button-card
+        entity: sensor.f310gp_192_168_1_84_port_Gi1_0_2
+        name: |
+          [[[
+            const portNum = 2;
+            const power = parseFloat(entity.attributes.poe_power_w) || 0;
+            if (power > 0) {
+              return `<b>P${portNum}</b><br><span style="font-size:10px">${power.toFixed(1)}W</span>`;
+            }
+            return `<b>P${portNum}</b>`;
+          ]]]
+        aspect_ratio: 1
+        color_type: card
+        show_icon: false
+        show_state: false
+        show_label: true
+        styles:
+          card:
+            - padding: 4px
+            - background: |
+                [[[
+                  const speed = entity.attributes.speed || 'Down';
+                  if (speed === 'Link Down') return 'grey';
+                  if (speed.includes('10Full')) return 'orange';
+                  if (speed.includes('100Full')) return 'green';
+                  if (speed.includes('1000Full') || speed.includes('1GFull')) return 'blue';
+                  if (speed.includes('2500Full')) return 'purple';
+                  if (speed.includes('10GFull')) return 'pink';
+                  return 'gray';
+                ]]]
+          name:
+            - justify-self: center
+            - align-self: center
+            - margin: 0px
+            - padding: 0px
+            - font-size: 12px
+            - font-weight: bold
+      - type: custom:button-card
+        entity: sensor.f310gp_192_168_1_84_port_Gi1_0_3
+        name: |
+          [[[
+            const portNum = 3;
+            const power = parseFloat(entity.attributes.poe_power_w) || 0;
+            if (power > 0) {
+              return `<b>P${portNum}</b><br><span style="font-size:10px">${power.toFixed(1)}W</span>`;
+            }
+            return `<b>P${portNum}</b>`;
+          ]]]
+        aspect_ratio: 1
+        color_type: card
+        show_icon: false
+        show_state: false
+        show_label: true
+        styles:
+          card:
+            - padding: 4px
+            - background: |
+                [[[
+                  const speed = entity.attributes.speed || 'Down';
+                  if (speed === 'Link Down') return 'grey';
+                  if (speed.includes('10Full')) return 'orange';
+                  if (speed.includes('100Full')) return 'green';
+                  if (speed.includes('1000Full') || speed.includes('1GFull')) return 'blue';
+                  if (speed.includes('2500Full')) return 'purple';
+                  if (speed.includes('10GFull')) return 'pink';
+                  return 'gray';
+                ]]]
+          name:
+            - justify-self: center
+            - align-self: center
+            - margin: 0px
+            - padding: 0px
+            - font-size: 12px
+            - font-weight: bold
+      - type: custom:button-card
+        entity: sensor.f310gp_192_168_1_84_port_Gi1_0_4
+        name: |
+          [[[
+            const portNum = 4;
+            const power = parseFloat(entity.attributes.poe_power_w) || 0;
+            if (power > 0) {
+              return `<b>P${portNum}</b><br><span style="font-size:10px">${power.toFixed(1)}W</span>`;
+            }
+            return `<b>P${portNum}</b>`;
+          ]]]
+        aspect_ratio: 1
+        color_type: card
+        show_icon: false
+        show_state: false
+        show_label: true
+        styles:
+          card:
+            - padding: 4px
+            - background: |
+                [[[
+                  const speed = entity.attributes.speed || 'Down';
+                  if (speed === 'Link Down') return 'grey';
+                  if (speed.includes('10Full')) return 'orange';
+                  if (speed.includes('100Full')) return 'green';
+                  if (speed.includes('1000Full') || speed.includes('1GFull')) return 'blue';
+                  if (speed.includes('2500Full')) return 'purple';
+                  if (speed.includes('10GFull')) return 'pink';
+                  return 'gray';
+                ]]]
+          name:
+            - justify-self: center
+            - align-self: center
+            - margin: 0px
+            - padding: 0px
+            - font-size: 12px
+            - font-weight: bold
+      - type: custom:button-card
+        entity: sensor.f310gp_192_168_1_84_port_Gi1_0_5
+        name: |
+          [[[
+            const portNum = 5;
+            const power = parseFloat(entity.attributes.poe_power_w) || 0;
+            if (power > 0) {
+              return `<b>P${portNum}</b><br><span style="font-size:10px">${power.toFixed(1)}W</span>`;
+            }
+            return `<b>P${portNum}</b>`;
+          ]]]
+        aspect_ratio: 1
+        color_type: card
+        show_icon: false
+        show_state: false
+        show_label: true
+        styles:
+          card:
+            - padding: 4px
+            - background: |
+                [[[
+                  const speed = entity.attributes.speed || 'Down';
+                  if (speed === 'Link Down') return 'grey';
+                  if (speed.includes('10Full')) return 'orange';
+                  if (speed.includes('100Full')) return 'green';
+                  if (speed.includes('1000Full') || speed.includes('1GFull')) return 'blue';
+                  if (speed.includes('2500Full')) return 'purple';
+                  if (speed.includes('10GFull')) return 'pink';
+                  return 'gray';
+                ]]]
+          name:
+            - justify-self: center
+            - align-self: center
+            - margin: 0px
+            - padding: 0px
+            - font-size: 12px
+            - font-weight: bold
+      - type: custom:button-card
+        entity: sensor.f310gp_192_168_1_84_port_Gi1_0_6
+        name: |
+          [[[
+            const portNum = 6;
+            const power = parseFloat(entity.attributes.poe_power_w) || 0;
+            if (power > 0) {
+              return `<b>P${portNum}</b><br><span style="font-size:10px">${power.toFixed(1)}W</span>`;
+            }
+            return `<b>P${portNum}</b>`;
+          ]]]
+        aspect_ratio: 1
+        color_type: card
+        show_icon: false
+        show_state: false
+        show_label: true
+        styles:
+          card:
+            - padding: 4px
+            - background: |
+                [[[
+                  const speed = entity.attributes.speed || 'Down';
+                  if (speed === 'Link Down') return 'grey';
+                  if (speed.includes('10Full')) return 'orange';
+                  if (speed.includes('100Full')) return 'green';
+                  if (speed.includes('1000Full') || speed.includes('1GFull')) return 'blue';
+                  if (speed.includes('2500Full')) return 'purple';
+                  if (speed.includes('10GFull')) return 'pink';
+                  return 'gray';
+                ]]]
+          name:
+            - justify-self: center
+            - align-self: center
+            - margin: 0px
+            - padding: 0px
+            - font-size: 12px
+            - font-weight: bold
+      - type: custom:button-card
+        entity: sensor.f310gp_192_168_1_84_port_Gi1_0_7
+        name: |
+          [[[
+            const portNum = 7;
+            const power = parseFloat(entity.attributes.poe_power_w) || 0;
+            if (power > 0) {
+              return `<b>P${portNum}</b><br><span style="font-size:10px">${power.toFixed(1)}W</span>`;
+            }
+            return `<b>P${portNum}</b>`;
+          ]]]
+        aspect_ratio: 1
+        color_type: card
+        show_icon: false
+        show_state: false
+        show_label: true
+        styles:
+          card:
+            - padding: 4px
+            - background: |
+                [[[
+                  const speed = entity.attributes.speed || 'Down';
+                  if (speed === 'Link Down') return 'grey';
+                  if (speed.includes('10Full')) return 'orange';
+                  if (speed.includes('100Full')) return 'green';
+                  if (speed.includes('1000Full') || speed.includes('1GFull')) return 'blue';
+                  if (speed.includes('2500Full')) return 'purple';
+                  if (speed.includes('10GFull')) return 'pink';
+                  return 'gray';
+                ]]]
+          name:
+            - justify-self: center
+            - align-self: center
+            - margin: 0px
+            - padding: 0px
+            - font-size: 12px
+            - font-weight: bold
+      - type: custom:button-card
+        entity: sensor.f310gp_192_168_1_84_port_Gi1_0_8
+        name: |
+          [[[
+            const portNum = 8;
+            const power = parseFloat(entity.attributes.poe_power_w) || 0;
+            if (power > 0) {
+              return `<b>P${portNum}</b><br><span style="font-size:10px">${power.toFixed(1)}W</span>`;
+            }
+            return `<b>P${portNum}</b>`;
+          ]]]
+        aspect_ratio: 1
+        color_type: card
+        show_icon: false
+        show_state: false
+        show_label: true
+        styles:
+          card:
+            - padding: 4px
+            - background: |
+                [[[
+                  const speed = entity.attributes.speed || 'Down';
+                  if (speed === 'Link Down') return 'grey';
+                  if (speed.includes('10Full')) return 'orange';
+                  if (speed.includes('100Full')) return 'green';
+                  if (speed.includes('1000Full') || speed.includes('1GFull')) return 'blue';
+                  if (speed.includes('2500Full')) return 'purple';
+                  if (speed.includes('10GFull')) return 'pink';
+                  return 'gray';
+                ]]]
+          name:
+            - justify-self: center
+            - align-self: center
+            - margin: 0px
+            - padding: 0px
+            - font-size: 12px
+            - font-weight: bold
+      - type: custom:button-card
+        entity: sensor.f310gp_192_168_1_84_port_Gi1_0_9
+        name: P9
+        aspect_ratio: 1
+        color_type: card
+        show_icon: false
+        show_state: false
+        show_label: true
+        styles:
+          card:
+            - padding: 4px
+            - background: |
+                [[[
+                  const speed = entity.attributes.speed || 'Down';
+                  if (speed === 'Link Down') return 'grey';
+                  if (speed.includes('10Full')) return 'orange';
+                  if (speed.includes('100Full')) return 'green';
+                  if (speed.includes('1000Full') || speed.includes('1GFull')) return 'blue';
+                  if (speed.includes('2500Full')) return 'purple';
+                  if (speed.includes('10GFull')) return 'pink';
+                  return 'gray';
+                ]]]
+          name:
+            - justify-self: center
+            - align-self: center
+            - margin: 0px
+            - padding: 0px
+            - font-size: 14px
+            - font-weight: bold
+      - type: custom:button-card
+        entity: sensor.f310gp_192_168_1_84_port_Gi1_0_10
+        name: P10
+        aspect_ratio: 1
+        color_type: card
+        show_icon: false
+        show_state: false
+        show_label: true
+        styles:
+          card:
+            - padding: 4px
+            - background: |
+                [[[
+                  const speed = entity.attributes.speed || 'Down';
+                  if (speed === 'Link Down') return 'grey';
+                  if (speed.includes('10Full')) return 'orange';
+                  if (speed.includes('100Full')) return 'green';
+                  if (speed.includes('1000Full') || speed.includes('1GFull')) return 'blue';
+                  if (speed.includes('2500Full')) return 'purple';
+                  if (speed.includes('10GFull')) return 'pink';
+                  return 'gray';
+                ]]]
+          name:
+            - justify-self: center
+            - align-self: center
+            - margin: 0px
+            - padding: 0px
+            - font-size: 14px
+            - font-weight: bold
