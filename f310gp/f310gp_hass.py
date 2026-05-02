@@ -26,10 +26,6 @@ MQTT_PASS  = _cfg("mqtt_password", _cfg("mqtt_pass", ""))
 MQTT_PREFIX = _cfg("mqtt_prefix", "homeassistant")
 POLL_INTERVAL = int(_cfg("poll_interval", "60"))
 
-log.info("Config: mqtt_host=%s mqtt_port=%s user='%s' (len=%d) pass_set=%s prefix=%s poll=%ds switches=%d",
-         MQTT_HOST, MQTT_PORT, MQTT_USER, len(MQTT_USER), bool(MQTT_PASS),
-         MQTT_PREFIX, POLL_INTERVAL, len(SWITCH_HOSTS))
-
 _switch_hosts_str     = _cfg("switch_hosts")
 _switch_users_str     = _cfg("switch_users")
 _switch_passwords_str = _cfg("switch_passwords")
@@ -47,6 +43,10 @@ if not (len(SWITCH_HOSTS) == len(SWITCH_USERS) == len(SWITCH_PASSWORDS)):
     sys.exit(1)
 
 SWITCHES = list(zip(SWITCH_HOSTS, SWITCH_USERS, SWITCH_PASSWORDS))
+
+log.info("Config: mqtt_host=%s mqtt_port=%s user='%s' (len=%d) pass_set=%s prefix=%s poll=%ds switches=%d",
+         MQTT_HOST, MQTT_PORT, MQTT_USER, len(MQTT_USER), bool(MQTT_PASS),
+         MQTT_PREFIX, POLL_INTERVAL, len(SWITCH_HOSTS))
 
 
 def device_id(host):
