@@ -55,7 +55,7 @@ def device_id(host):
 
 def mqtt_connect():
     import paho.mqtt.client as mqtt
-    client = mqtt.Client(client_id=f"f310gp_{int(time.time())}")
+    client = mqtt.Client(client_id=f"f310gp_{int(time.time())}", callback_api_version=mqtt.CallbackAPIVersion.VERSION2)
     if MQTT_USER:
         client.username_pw_set(MQTT_USER, MQTT_PASS)
         log.info("MQTT auth: user='%s' (len=%d)", MQTT_USER, len(MQTT_PASS))
