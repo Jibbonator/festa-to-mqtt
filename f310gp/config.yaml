@@ -1,6 +1,6 @@
 name: "Festa F310GP Monitor"
 description: "Festa F310GP MQTT Auto-Discovery via SSH"
-version: "1.0.0"
+version: "1.0.1"
 slug: "f310gp"
 init: false
 arch:
