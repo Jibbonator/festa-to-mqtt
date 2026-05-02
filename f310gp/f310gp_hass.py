@@ -26,6 +26,10 @@ MQTT_PASS  = _cfg("mqtt_password", _cfg("mqtt_pass", ""))
 MQTT_PREFIX = _cfg("mqtt_prefix", "homeassistant")
 POLL_INTERVAL = int(_cfg("poll_interval", "60"))
 
+log.info("Config: mqtt_host=%s mqtt_port=%s user='%s' (len=%d) pass_set=%s prefix=%s poll=%ds switches=%d",
+         MQTT_HOST, MQTT_PORT, MQTT_USER, len(MQTT_USER), bool(MQTT_PASS),
+         MQTT_PREFIX, POLL_INTERVAL, len(SWITCH_HOSTS))
+
 _switch_hosts_str     = _cfg("switch_hosts")
 _switch_users_str     = _cfg("switch_users")
 _switch_passwords_str = _cfg("switch_passwords")
@@ -54,6 +58,9 @@ def mqtt_connect():
     client = mqtt.Client(client_id=f"f310gp_{int(time.time())}")
     if MQTT_USER:
         client.username_pw_set(MQTT_USER, MQTT_PASS)
+        log.info("MQTT auth: user='%s' (len=%d)", MQTT_USER, len(MQTT_PASS))
+    else:
+        log.warning("MQTT: no auth configured – user is empty")
     client.connect(MQTT_HOST, MQTT_PORT, keepalive=30)
     client.loop_start()
     return client
