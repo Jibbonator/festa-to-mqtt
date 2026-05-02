@@ -8,7 +8,7 @@ Liest per SSH CPU, Memory, Port-Status und PoE-Daten aus und publiziert sie via 
 
 1. Dieses Repo als HA Addon-Repo hinzufügen:
    Settings → Add-ons → Add-on Store → ⋮ → Repositories
-   `https://github.com/<dein-user>/festa-to-mqtt`
+    `https://github.com/Jibbonator/festa-to-mqtt`
 
 2. Addon installieren
 
